@@ -1,5 +1,4 @@
-# Cpf-Generator
-Cpf Generator  in  python
+
 
 # Algorithm for Generating Valid CPF Numbers using Numpy's default_rng
 
