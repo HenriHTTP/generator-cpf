@@ -10,8 +10,6 @@ First, the algorithm generates the nine random numbers and stores them in an arr
 
 This algorithm is a simple and efficient way to generate valid CPF numbers in Python. It is also very useful for testing applications that require CPF numbers as input.
 
-# PT-BR
-
 # Algoritmo para gerar números de CPF válidos usando o default_rng do Numpy
 
 Este algoritmo utiliza a função default_rng da biblioteca NumPy para gerar números de CPF válidos. CPF significa Cadastro de Pessoas Físicas, que é um documento brasileiro usado para identificar indivíduos e registrá-los no Cadastro de Pessoas Físicas do Brasil.
