@@ -1,35 +1,39 @@
 from numpy.random import default_rng
+
 rng = default_rng()
 
-def CPF (num): 
-    
+
+def create_cpf_valid(num) -> str:
     num = str(num)
-    returnCpfFirst = num[:9]
-    countFirst=10
-    valueFirst = 0
+    return_cpf_first = num[:9]
+    count_first = 10
+    value_first = 0
 
-    for i  in returnCpfFirst : 
-        valueFirst += int(i)*countFirst
-        countFirst -= 1
+    for i in return_cpf_first:
+        value_first += int(i) * count_first
+        count_first -= 1
 
-    numbersFirst = (valueFirst * 10)  % 11
-    
-    numbersFirst = numbersFirst  if numbersFirst  <= 9 else   0 
-    
-    returnCpfSecond= num[:9] + str(numbersFirst)
-    countSecond=11
-    valueSecond = 0
+    numbers_first = (value_first * 10) % 11
 
-    for i in returnCpfSecond : 
-        valueSecond += int(i) * countSecond
-        countSecond -=1
+    numbers_first = numbers_first if numbers_first <= 9 else 0
 
-    numbersSecond = (valueSecond * 10) %11
-    numbersSecond = numbersSecond if numbersSecond <=9 else 0
-  
-    Cpf = returnCpfSecond + str(numbersSecond)
-    CpfiSformat = f'{Cpf[:3]}.{Cpf[3:6]}.{Cpf[6:9]}-{Cpf[9:]}'
+    return_cpf_second = num[:9] + str(numbers_first)
+    count_second = 11
+    value_second = 0
 
-    return CpfiSformat
+    for i in return_cpf_second:
+        value_second += int(i) * count_second
+        count_second -= 1
 
-print(CPF(rng.integers(1000000000)))
+    numbers_second = (value_second * 10) % 11
+    numbers_second = numbers_second if numbers_second <= 9 else 0
+
+    cpf = return_cpf_second + str(numbers_second)
+    cpf_sformat = f"{cpf[:3]}.{cpf[3:6]}.{cpf[6:9]}-{cpf[9:]}"
+
+    return cpf_sformat
+
+
+# test method 
+cpf_test = create_cpf_valid(rng.integers(1000000000))
+print(cpf_test)
