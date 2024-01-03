@@ -1,8 +1,3 @@
-from numpy.random import default_rng
-
-rng = default_rng()
-
-
 def create_cpf_valid(num) -> str:
     num = str(num)
     return_cpf_first = num[:9]
@@ -33,7 +28,3 @@ def create_cpf_valid(num) -> str:
 
     return cpf_sformat
 
-
-# test method 
-cpf_test = create_cpf_valid(rng.integers(1000000000))
-print(cpf_test)
